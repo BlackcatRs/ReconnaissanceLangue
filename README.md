@@ -1,7 +1,7 @@
 # ReconnaissanceLangue
                                            Reconnaissance de la langue d’un texte
 
-CCe projet consiste à écrire un programme Python qui, étant donné un texte, détermine dans quelle langue il est
+Ce projet consiste à écrire un programme Python qui, étant donné un texte, détermine dans quelle langue il est
 écrit.
 
 Par exemple le programme pourra accepter en entrée le texte (tiré de La Maison du chat-qui-pelote, Balzac, 1830) :
