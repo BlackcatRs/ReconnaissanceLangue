@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 var_a = "hello world"
 
 #dictionnaire de la table d'occurance
@@ -37,3 +39,5 @@ def de_str_a_table_de_frequece(localDic):
 
 de_str_a_table_doccurance()
 de_str_a_table_de_frequece(dic1)
+
+print(dic2)
