@@ -11,6 +11,15 @@ def getList(dict):
     return list(dict.keys())
 
 
+#calculer le nombre total des caractere contient un dictionnaire
+def lenOfDic(localDic):
+    len = 0
+    for keys in localDic:
+        len += 1
+    return len
+
+
+
 #table de occurance
 def de_str_a_table_doccurance():
     for element in var_a:
@@ -20,13 +29,11 @@ def de_str_a_table_doccurance():
             dic1[element] = 1
 
 #table de freqeuce
-def de_str_a_table_de_frequece():
-    for value in dic1:
-        varLocal = dic1[value]
-        dic2[value] =  (varLocal / len(dic1.keys()))
+def de_str_a_table_de_frequece(localDic):
+    for value in localDic:
+        dic2[value] = dic1[value]
+        dic2[value] /= 8
 
 
 de_str_a_table_doccurance()
-de_str_a_table_de_frequece()
-
-print(dic2)
+de_str_a_table_de_frequece(dic1)
