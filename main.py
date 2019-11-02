@@ -24,17 +24,21 @@ def lenOfDic(localDic):
 
 #table d'occurance
 def de_str_a_table_doccurance(textLocal):
+    dicTableOccurance = {}
     for element in textLocal:
-        if element in getList(dic1) :
-            dic1[element] += 1
+        if element in getList(dicTableOccurance) :
+            dicTableOccurance[element] += 1
         else:
-            dic1[element] = 1
+            dicTableOccurance[element] = 1
+    return dicTableOccurance
 
 #table de freqeuce
 def de_str_a_table_de_frequece(localDic):
+    dicTableDeFrequece = {}
     for value in localDic:
-        dic2[value] = dic1[value]
-        dic2[value] /= lenOfDic(dic1)
+        dicTableDeFrequece[value] = localDic[value]
+        dicTableDeFrequece[value] /= lenOfDic(localDic)
+    return dicTableDeFrequece
 
 
 
@@ -46,11 +50,13 @@ def de_str_a_table_de_frequece(localDic):
 #sinon
     #fo = 0 et calcule
 
+def calcule():
+    for langue in language_name_to_text:
+        textLocal = language_name_to_text[langue]
+        de_str_a_table_doccurance(textLocal)
+        de_str_a_table_de_frequece(dic1)
+        for allLetters in textLocal:
+            if condition:
+                pass
 
-
-
-
-de_str_a_table_doccurance(var_a)
-de_str_a_table_de_frequece(dic1)
-
-print(dic1)
+print(de_str_a_table_de_frequece(de_str_a_table_doccurance(var_a)))
