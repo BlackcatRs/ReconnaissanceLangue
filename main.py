@@ -3,7 +3,7 @@ from langues import *
 from math import *
 
 #my text
-var_a = "hello world"
+var_a = input("Enter your text :  ")
 
 #get keys from dictionnaire
 def getList(dict):
