@@ -5,12 +5,6 @@ from math import *
 #my text
 var_a = "hello world"
 
-#dictionnaire de la table d'occurance utilise par de_str_a_table_doccurance(textLocal)
-dic1 = {}
-
-#dictionnaire de la table de freqeuce utlise par de_str_a_table_de_frequece(localDic)
-dic2 = {}
-
 #get keys from dictionnaire
 def getList(dict):
     return list(dict.keys())
@@ -22,7 +16,7 @@ def lenOfDic(localDic):
         len += localDic[keys]
     return len
 
-#table d'occurance
+#fonction return un dictionnaire de table d'occurance
 def de_str_a_table_doccurance(textLocal):
     dicTableOccurance = {}
     for element in textLocal:
@@ -32,7 +26,7 @@ def de_str_a_table_doccurance(textLocal):
             dicTableOccurance[element] = 1
     return dicTableOccurance
 
-#table de freqeuce
+#fonction returne un dictionnaire de table de freqeuce
 def de_str_a_table_de_frequece(localDic):
     dicTableDeFrequece = {}
     for value in localDic:
@@ -42,21 +36,34 @@ def de_str_a_table_de_frequece(localDic):
 
 
 
-#fonction permet de calculer la distance entre la langue ecrit par utilisateur et
-#langue definie dans la fichier langues.py
-
-# si tu trouve caractere dans la table de freqeuce
-    #calcule
-#sinon
-    #fo = 0 et calcule
-
 def calcule():
-    for langue in language_name_to_text:
-        textLocal = language_name_to_text[langue]
-        de_str_a_table_doccurance(textLocal)
-        de_str_a_table_de_frequece(dic1)
-        for allLetters in textLocal:
-            if condition:
-                pass
+    dicTableDeFrequeceMyText = {}
+    dicTableDeFrequeceMyText = de_str_a_table_de_frequece(de_str_a_table_doccurance(var_a)) #my text
 
-print(de_str_a_table_de_frequece(de_str_a_table_doccurance(var_a)))
+    dicDistance = {}
+
+    for element in language_name_to_text:
+        result = 0
+        dicTableDeFrequeceLangue = {}
+        dicTableDeFrequeceLangue = de_str_a_table_de_frequece(de_str_a_table_doccurance(language_name_to_text[element]))
+        for key in dicTableDeFrequeceMyText:
+            if key in getList(dicTableDeFrequeceLangue):
+                result += (dicTableDeFrequeceMyText[key] - dicTableDeFrequeceLangue[key])**2
+            else :
+                result += (dicTableDeFrequeceMyText[key] - 0)**2
+
+        dicDistance[element] = sqrt(result)
+    return dicDistance
+
+def smallNum(dic):
+    list = []
+    for value in dic:
+        list.append(dic[value])
+
+    list.sort()
+
+    for value in dic:
+        if list[0] == dic[value]:
+            print(value)
+
+smallNum(calcule())
